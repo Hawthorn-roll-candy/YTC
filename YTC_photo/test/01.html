@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>定位</title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				border: 2px solid black;
+				margin: 100px;
+				/* 相对定位，可以把它理解为一个参照物 */
+				position: relative;
+			}
+			.btn{
+				width: 100px;
+				height: 50px;
+				/* 绝对定位，默认以浏览器为标准进行定位 */
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				
+			}
+			
+			/*
+			子绝父相：子级元素使用绝对定位，父级元素使用相对定位
+			一个元素以另一个元素为标准进行位置设置的时候，我们就使用子绝父相
+			*/
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<h2>下面有一个按钮</h2>
+			<button class="btn">按钮</button>
+		</div>
+	</body>
+</html>

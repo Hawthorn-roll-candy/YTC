@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>位移</title>
+		<style>
+			.box {
+				perspective: 200px;
+				width: 200px;
+				height: 200px;
+				margin: 100px;
+				border: 1px solid black;
+				/* 网页默认是平面2D，如果要3D变换，就要开启3D空间 */
+				transform-style: preserve-3d;
+			}
+
+			.small-box {
+				width: 100%;
+				height: 100%;
+				background-color: deeppink;
+				/* 旋转 */
+				/* transform: rotateZ(45deg); */
+				/* transform: rotateX(0deg); */
+				transform: rotateY(0deg);
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="small-box"></div>
+		</div>
+	</body>
+</html>

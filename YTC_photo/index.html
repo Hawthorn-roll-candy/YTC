@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>YTC的音乐相册</title>
+		<style>
+			@import url("css/ring.css");
+			.square{
+				width: 250px;
+				height: 250px;
+			}
+			.square img{
+				opacity: 0.3;
+			}
+			/* 正方体第1张图片 */
+			.square img:nth-child(1){
+				transform: translateZ(125px);
+			}
+			.square img:nth-child(2){
+				transform: rotateY(90deg) translateZ(125px);
+			}
+			.square img:nth-child(3){
+				transform: rotateY(270deg) translateZ(125px);
+			}
+			.square img:nth-child(4){
+				transform: rotateY(180deg) translateZ(125px);
+			}
+			.square img:nth-child(5){
+				transform: rotateX(90deg) translateZ(125px);
+			}
+			.square img:nth-child(6){
+				transform: rotateX(-90deg) translateZ(125px);
+			}
+			/* 调整透明度 */
+			.square img:nth-child(n+7){
+				opacity: 0.8;
+			}
+			.square img:nth-child(7){
+				transform:scale3d(0.5,0.5,0.5) translateZ(125px);
+			}
+			.square img:nth-child(8){
+				transform:scale3d(0.5,0.5,0.5) rotateY(90deg) translateZ(125px);
+			}
+			.square img:nth-child(9){
+				transform:scale3d(0.5,0.5,0.5) rotateY(270deg) translateZ(125px);
+			}
+			.square img:nth-child(10){
+				transform:scale3d(0.5,0.5,0.5) rotateY(180deg) translateZ(125px);
+			}
+			.square img:nth-child(11){
+				transform:scale3d(0.5,0.5,0.5) rotateX(90deg) translateZ(125px);
+			}
+			.square img:nth-child(12){
+				transform:scale3d(0.5,0.5,0.5) rotateX(-90deg) translateZ(125px);
+			}
+			.btn-square{
+				padding: 5px 10px;
+				border: none;
+				cursor: pointer;
+			}
+			.btn-square:hover{
+				color: white;
+				background-color: deeppink;
+			}
+			/*定义动画*/
+			@keyframes box-ani{
+				from{
+					transform: rotateX(-15deg) rotateY(10deg);
+				}
+				to{
+					transform: rotateX(-15deg) rotateY(370deg);
+				}
+			}
+			/* 使用动画 */
+			.box{
+					animation-name: box-ani;
+					animation-duration: 20s;
+					animation-iteration-count: infinite;
+					animation-timing-function: linear;
+				}
+		</style>
+	</head>
+	<body>
+		<div class="btn-box">
+			<button class="btn">环形</button>
+			<button class="btn-square">正方形</button>
+		</div>
+		<div class="box">
+			<img src="img/t3.jpg" alt="">
+			<img src="img/t4.jpg" alt="">
+			<img src="img/t10.jpg" alt="">
+			<img src="img/t7.jpg" alt="">
+			<img src="img/t12.jpg" alt="">
+			<img src="img/y1.jpg" alt="">
+			<img src="img/y2.jpg" alt="">
+			<img src="img/y3.png" alt="">
+			<img src="img/y4.jpg" alt="">
+			<img src="img/y5.jpg" alt="">
+			<img src="img/y6.png" alt="">
+			<img src="img/y7.jpg" alt="">
+			
+		</div>
+	</body>
+	<script>
+		var btn = document.querySelector(".btn");
+		var box = document.querySelector(".box");
+		btn.onclick = function(){
+			//现在点击以后要在box的盒子上面添加一个class为ring的样式
+			box.classList.add("ring");
+			box.classList.remove("square")
+		}
+		var btnSquare = document.querySelector(".btn-square");
+		btnSquare.onclick = function(){
+			box.classList.add("square");
+			box.classList.remove("ring")
+		}
+	</script>
+
+</html>

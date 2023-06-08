@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>动画</title>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				background-color: deeppink;
+				font-size: 22px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 150px;
+				/* 动画名称 */
+				animation-name: aaa;
+				/* 动画时长 */
+				animation-duration: 3s;
+				/* 动画执行的次数 */
+				animation-iteration-count: infinite;
+				/* 动画的播放效果 */
+				animation-timing-function: linear;
+				
+			}
+			/* 定义一个动画 */
+			@keyframes aaa{
+				from{
+					transform: rotateZ(0deg);
+				}
+				to{
+					transform: rotateZ(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			标哥哥最帅
+		</div>
+	</body>
+</html>
